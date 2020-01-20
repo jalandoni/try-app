@@ -1,0 +1,57 @@
+<div class="parent">
+    <div class="card1">
+        <div id="par">
+            <h1>DATA DRIVEN</h1>
+            <form [formGroup]="reactiveForm">
+
+                <label>
+                    First Name:
+                    <input type="text" formControlName="firstName">
+                </label>
+                <br>
+
+                <label>
+                    Last Name:
+                    <input type="text" formControlName="lastName">
+                </label>
+                <br>
+                <label>
+                    Email:
+                    <input type="email" formControlName="contact" email="true">
+                </label>
+                <div>
+                    <h3>Address</h3>
+
+                    <label>
+                        Street:
+                        <input type="text" formControlName="street">
+                    </label>
+                    <br>
+
+                    <label>
+                        City:
+                        <input type="text" formControlName="city">
+                    </label>
+                    <br>
+
+                    <label>
+                        State:
+                        <input type="text" formControlName="state">
+                    </label>
+                    <br>
+
+                    <label>
+                        Zip Code:
+                        <input type="number" formControlName="zip">
+                    </label>
+                </div>
+                <button type="submit" [class.submitbtn]="reactiveForm.valid" [disabled]="!reactiveForm.valid"
+                    (click)="onSubmit()">Submit</button>
+            </form>
+            <hr>
+            <p [hidden]="!submitted">
+                Form Value: {{ reactiveForm.value | json }}
+            </p>
+        </div>
+    </div>
+</div>

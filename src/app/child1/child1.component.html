@@ -1,0 +1,14 @@
+<div class="card"><div id="child"><h1>Child Template</h1>
+    <p>Name: {{name}}</p>
+    <br>
+    <p>Gender: {{gender}}</p>
+    <br>
+    <p>Enrolled: {{enrolled}}</p>
+    <br>
+  
+    <button (click)="onApproved(approved)" [class.submitbtn]="isActive" (click)="addPeople()" >Approved</button>
+    <button (click)="onDecline(decline)" [class.declinebtn]="isActive" >Decline</button>
+    <h2>List of Approved</h2>
+    <li *ngFor = "let person of peopleApproved">Name:{{person.name}} Status:{{person.status}} Gender: {{person.gender}} </li>
+    </div>
+</div>

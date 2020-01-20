@@ -1,0 +1,27 @@
+<div class="parent">
+    <h1>ACTIVITY 6 (1/15/2020)</h1>
+    <div class="card1">
+        <div id="par">
+    <h2>Parent Template</h2>
+  <p>Name</p><input type="text" [(ngModel)]="name" >
+  <br>
+  <br>
+  Enrolled:  <input type="checkbox" (change)="getCheckboxStatus($event)">
+  <br>
+  <br>
+  Gender: <select name="Gender" [(ngModel)]="gender">
+    <option value="Female">Female</option>
+    <option value="Male">Male</option>
+  </select>
+  <br>
+    <br>
+  <button (click)="onClick(name,gender)" [class.submitbtn]="isActive">Submit</button>
+  <p *ngIf="approved">NOTIFICATION: {{approved}}</p>
+  <h2>List of Declined</h2>
+  <li *ngFor="let person of peopleDeclined">Name: {{person.name}} Status: {{person.status}} Gender:{{person.gender}}</li>
+</div>
+</div>
+  <hr>
+  <app-child1 (notificationEvent)="approved=$event"  (declinePeople)="addPeople1()"   [name]="name1" [gender]="gender1" [enrolled]="enrolled2" ></app-child1>
+</div>
+

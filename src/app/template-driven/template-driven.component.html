@@ -1,0 +1,66 @@
+<h1>Activity 7 FORMS (1/16/2020)</h1>
+<div class="parent"><div class="card1">
+  <div id="par">
+<h1>Template Driven</h1>
+<div [hidden]="submitted">
+<form (ngSubmit)="onSubmit()" #sampleForm="ngForm">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input name="name" [(ngModel)]="fullname" required  #name="ngModel">
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+            <div [class.font]="isValid" *ngIf="name.errors.required">
+                Name is required.
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input required type="email" pattern=".+@gmail.com" [(ngModel)]="contactEmail"  name="email"
+            #email="ngModel">
+        <div [hidden]="email.valid || email.pristine" [class.font]="isValid" class="alert alert-danger">
+            Email is required with valid pattern
+        </div>
+    </div>
+    <br>
+    <br>
+<div class="form-group">
+    <label for="gender">Gender</label>
+    <select class="form-control"
+            required
+            [(ngModel)]="genderOptions" name="gender"
+            #gender="ngModel">
+      <option *ngFor="let gen of genders" [value]="gen">{{gen}}</option>
+    </select>
+    <div [class.font]="isValid" [hidden]="gender.valid || gender.pristine" class="alert alert-danger">
+        gender is required
+    </div>
+  </div>
+
+    <br>
+    <button type="submit" [class.submitbtn]="sampleForm.form.valid"  [disabled]="!sampleForm.form.valid">Submit</button> 
+</form>
+</div>
+
+
+<div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-xs-3">Name</div>
+      <div class="col-xs-9">{{fullname}}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Email</div>
+      <div class="col-xs-9">{{ contactEmail }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Gender</div>
+      <div class="col-xs-9">{{ genderOptions }}</div>
+    </div>
+    <br>
+    <button class="btn btn-primary" class="submitbtn" (click)="submitted=false">Edit</button>
+  </div>
+</div>
+</div>
+</div>

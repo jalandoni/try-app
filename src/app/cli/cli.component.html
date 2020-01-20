@@ -1,0 +1,31 @@
+
+<p>Class binding</p>
+<button class="external1" [class.external1]="isActive1" >button</button>
+
+<p>Style binding</p>
+<button class="external2" [style.background]="isActive ? 'red':'green'" >button</button>
+
+<p>Interpolation binding</p>
+<fieldset>{{text}}</fieldset>
+
+<p>Property binding</p>
+<button [disabled] = "isDisabled" class="external4">Button</button>
+
+<p>Event binding</p>
+<button (click)="onClick()" class="external3" >button</button>
+
+<p>2-way binding</p>
+Name:<input><br>
+You entered:<p>{{name}}</p>
+
+<!-- <h1>Child Template</h1>
+From child:<input type ="text" [(ngModel)]="cdata"/>
+<button (click)="onChange(cdata)">send</button>
+<p>From parents: {{parentData}}</p>
+
+<h1>Child Template</h1>
+From child:<input type ="text" [(ngModel)]="cdata"/>
+<button (click)="onChange(cdata)">send</button>
+<p>From parents: {{parentData}}</p> -->
+
+

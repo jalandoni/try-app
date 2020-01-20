@@ -1,0 +1,6 @@
+<h1>Parent Template</h1>
+  <p>From Parent Data</p><input type="text" [(ngModel)]="pdata" >
+  <button (click)="onClick(pdata)">send</button>
+  <p>From Child: {{cdata}}</p>
+  <hr>
+  <app-child (childEvent)="cdata=$event" [parentData]="newData" ></app-child>

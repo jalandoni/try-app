@@ -1,0 +1,26 @@
+.external1{
+    background:blue;
+    margin-left:50%;
+    width:100px;
+    height: 50px;
+}
+
+.external2{
+    background:red;
+    margin-left:50%;
+    width:100px;
+    height: 50px;
+}
+.external4{
+    background:violet;
+    margin-left:50%;
+    width:100px;
+    height: 50px;
+}
+
+.external3{
+    margin-left: 50%;
+    background:yellowgreen;
+    width:100px;
+    height: 50px;
+}
